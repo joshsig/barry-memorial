@@ -47,8 +47,9 @@
         }
 
         h1 {
+            font-family: 'Dynalight', cursive;
             font-size: 3rem;
-            font-weight: 300;
+            font-weight: 400;
             margin-bottom: 0.5rem;
         }
 
@@ -177,12 +178,18 @@
             position: absolute;
             top: -50px;
             right: 0;
-            background: none;
+            background: rgba(0, 0, 0, 1);
             border: none;
             color: #f5f5dc;
-            font-size: 2rem;
+            font-size: 2.5rem;
             cursor: pointer;
             padding: 0.5rem;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             transition: opacity 0.3s ease;
 
             &:hover {
@@ -194,7 +201,7 @@
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            background: rgba(245, 245, 220, 0.2);
+            background: rgba(0, 0, 0, 1);
             border: none;
             color: #f5f5dc;
             font-size: 2rem;
@@ -206,10 +213,9 @@
             align-items: center;
             justify-content: center;
             transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
 
             &:hover {
-                background: rgba(245, 245, 220, 0.3);
+                background: rgba(0, 0, 0, 0.8);
                 transform: translateY(-50%) scale(1.1);
             }
 
@@ -226,19 +232,17 @@
             position: absolute;
             top: -50px;
             left: 0;
-            background: rgba(245, 245, 220, 0.2);
-            border: 1px solid rgba(245, 245, 220, 0.3);
+            background: rgba(0, 0, 0, 1);
+            border: none;
             color: #f5f5dc;
             font-size: 1rem;
             padding: 0.5rem 1rem;
             border-radius: 25px;
             cursor: pointer;
             transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
 
             &:hover {
-                background: rgba(245, 245, 220, 0.3);
-                border-color: rgba(245, 245, 220, 0.5);
+                background: rgba(0, 0, 0, 0.8);
                 transform: scale(1.05);
             }
         }
@@ -288,6 +292,7 @@
     .gallery-header {
         .gallery-nav {
             h1 {
+                font-family: 'Dynalight', cursive;
                 font-size: 2.5rem;
             }
         }
@@ -320,7 +325,9 @@
 
             .modal-close {
                 top: -40px;
-                font-size: 1.5rem;
+                font-size: 2rem;
+                width: 45px;
+                height: 45px;
             }
 
             .modal-download {
@@ -343,6 +350,7 @@
             padding: 0 1rem;
 
             h1 {
+                font-family: 'Dynalight', cursive;
                 font-size: 2rem;
             }
         }
@@ -365,17 +373,19 @@
                 font-size: 1.2rem;
 
                 &.modal-prev {
-                    left: -40px;
+                    left: -20px;
                 }
 
                 &.modal-next {
-                    right: -40px;
+                    right: -20px;
                 }
             }
 
             .modal-close {
                 top: -35px;
-                font-size: 1.2rem;
+                font-size: 1.8rem;
+                width: 40px;
+                height: 40px;
             }
 
             .modal-download {

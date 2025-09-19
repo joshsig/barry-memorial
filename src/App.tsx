@@ -4,27 +4,28 @@ import Lenis from 'lenis'
 import { useTransform, useScroll, motion } from 'framer-motion'
 import './App.scss'
 
-// Select 16 specific images for the 4 columns (4 images each)
+// Select 20 specific images for the 4 columns (5 images each)
 const images = [
-  "Document_20250911_0015.jpg",
-  "Document_20250911_0013.jpg",
-  "Document_20250911_0003.jpg",
-  "Document_20250911_0004.jpg",
-  "Document_20250911_0005.jpg",
-  "Document_20250911_0006.jpg",
-  "Document_20250911_0007.jpg",
-  "Document_20250911_0008.jpg",
-  "Document_20250911_0009.jpg",
-  "Document_20250911_0010.jpg",
-  "Document_20250911_0011.jpg",
-  "Document_20250911_0012.jpg",
-  "Document_20250911_0028.jpg",
-  "Document_20250911_0033.jpg",
-  "Document_20250911_0036.jpg",
-  "Document_20250911_0040.jpg",
-  "Document_20250911_0041.jpg",
-  "Document_20250911_0042.jpg",
-  "Document_20250911_0046.jpg",
+  "image1.jpg",
+  "image2.jpg",
+  "image3.jpg",
+  "image4.jpg",
+  "image5.jpg",
+  "image6.jpg",
+  "image7.jpg",
+  "image8.jpg",
+  "image9.jpg",
+  "image10.jpg",
+  "image11.jpg",
+  "image12.jpg",
+  "image13.jpg",
+  "image14.jpg",
+  "image15.jpg",
+  "image16.jpg",
+  "image17.jpg",
+  "image18.jpg",
+  "image19.jpg",
+  "image20.jpg",
 ]
 
 function App() {
@@ -38,12 +39,25 @@ function App() {
 
   const { height, width } = dimension
   const isMobile = width <= 768
+  const isSmallMobile = width <= 480
 
-  // Different parallax speeds for mobile vs desktop
-  const y = useTransform(scrollYProgress, [0, 1], [0, height * (isMobile ? 0.5 : 2)])
-  const y2 = useTransform(scrollYProgress, [0, 1], [0, height * (isMobile ? 0.6 : 3.3)])
-  const y3 = useTransform(scrollYProgress, [0, 1], [0, height * (isMobile ? 0.3 : 1.25)])
-  const y4 = useTransform(scrollYProgress, [0, 1], [0, height * (isMobile ? 0.6 : 3)])
+  // Parallax speeds - mobile follows desktop pattern but scaled appropriately
+  // Desktop: 2, 3.3, 1.25, 3
+  // Mobile: scaled down but still noticeable (1.2, 2, 0.8, 1.8)
+  // Small mobile: further scaled (0.8, 1.3, 0.5, 1.2)
+  const getParallaxMultiplier = (desktopValue: number) => {
+    if (isSmallMobile) {
+      return desktopValue * 0.4 // Scale down to 40% of desktop
+    } else if (isMobile) {
+      return desktopValue * 0.6 // Scale down to 60% of desktop
+    }
+    return desktopValue
+  }
+
+  const y = useTransform(scrollYProgress, [0, 1], [0, height * getParallaxMultiplier(2)])
+  const y2 = useTransform(scrollYProgress, [0, 1], [0, height * getParallaxMultiplier(3.3)])
+  const y3 = useTransform(scrollYProgress, [0, 1], [0, height * getParallaxMultiplier(1.25)])
+  const y4 = useTransform(scrollYProgress, [0, 1], [0, height * getParallaxMultiplier(3)])
 
   useEffect(() => {
     const lenis = new Lenis()
@@ -76,16 +90,16 @@ function App() {
             <h1 className="memorial-title">In Loving Memory</h1>
             <h2 className="name-title">Barry Wood</h2>
             <div className="dates">
-              <span className="birth-date">Born: [Birth Date]</span>
+              <span className="birth-date">Born: December 8, 1959</span>
               <span className="separator">•</span>
-              <span className="death-date">Passed: [Date of Passing]</span>
+              <span className="death-date">Passed: September 2, 2025</span>
             </div>
             <p className="memorial-quote">
-              "A life well-lived leaves behind a legacy of love, laughter, and cherished memories."
+
             </p>
           </div>
           <div className="hero-image">
-            <img src="/barry-memorial/barry/Document_20250911_0001.jpg" alt="Barry" className="main-photo" />
+            <img src="/barry-memorial/media/image66.jpg" alt="Barry" className="main-photo" />
           </div>
         </div>
         <div className="scroll-indicator">
@@ -99,23 +113,25 @@ function App() {
           <h3>Remembering Barry</h3>
           <div className="eulogy-text">
             <p>
-              Barry was a remarkable person whose presence brought light and joy to everyone around him.
-              His warm smile, kind heart, and generous spirit touched the lives of countless people throughout his journey.
+              Barry will be remembered as a devoted father and a cherished friend. He is survived by his former wife, Michele Reimer, and their son, Stephen Wood. He is also lovingly remembered by his former partner, Denise Klassen, and her children, Ashley, Aidan, and Arika Klassen.
             </p>
             <p>
-              As a devoted family member, Barry cherished every moment spent with his loved ones.
-              He was the kind of person who would drop everything to help a friend in need,
-              and his laughter could fill a room with happiness.
+              Born on December 8, 1959, in Winnipeg to June and Ronald Wood, Barry spent his early years in the Windsor Park and Niakwa Park neighbourhoods. A passionate golfer from a young age, he dedicated countless hours to the sport, earning the Green Jacket in 1975.
             </p>
             <p>
-              Throughout his life, Barry pursued his passions with dedication and brought enthusiasm
-              to everything he did. His positive spirit and determination were an inspiration to all
-              who had the privilege of knowing him.
+              Barry dedicated most of his professional life to Premier Personnel, joining in 1984 and quickly rising to the role of Executive Director, which he held until his retirement in 2017. A passionate advocate for supported employment, Barry played a pivotal role in shaping the field in Manitoba. He was instrumental in the development of the Manitoba Supported Employment Network and provided training across the province, earning widespread respect for his leadership and compassion.
             </p>
             <p>
-              Though he may no longer be with us in person, Barry's memory lives on in the hearts
-              of all who loved him. His legacy of kindness, love, and joy continues to inspire
-              those whose lives he touched.
+              Outside of work, Barry embraced life with enthusiasm. He was a connoisseur of fine food and a master of the barbecue, always eager to share meals with loved ones. His deep love of music—spanning rock, jazz, blues, and folk—was reflected in his extensive CD and stereo collection.
+            </p>
+            <p>
+              One of Barry’s happiest places was Dogtooth Lake, where he found peace and joy fishing and enjoying the natural beauty of the Canadian Shield. It was a place of deep connection and treasured memories.
+            </p>
+            <p>
+              Barry was known for his generosity and warmth. Whether through food, music, golf, or time on the water, he shared his passions freely and left a lasting impact on those around him.
+            </p>
+            <p>
+              In later years, Parkinson’s disease imposed many challenges, limiting his ability to enjoy the activities he loved. Despite this, Barry faced his illness with quiet strength and resilience. His family extends heartfelt thanks to the professional team at the Movement Disorder Clinic and to the friends who supported him with kindness and care.
             </p>
           </div>
         </div>
@@ -127,14 +143,14 @@ function App() {
           <h3>Photo Gallery</h3>
           <p>A collection of precious moments and memories</p>
         </div>
-        <div ref={gallery} className="gallery">
-          <Column images={[images[0], images[1], images[2], images[3]]} y={y} />
-          <Column images={[images[4], images[5], images[6], images[7]]} y={y2} />
-          <Column images={[images[8], images[9], images[10], images[11]]} y={y3} />
-          <Column images={[images[12], images[13], images[14], images[15]]} y={y4} />
-        </div>
         <div className="gallery-cta">
           <Link to="/gallery" className="view-all-btn">View All Photos</Link>
+        </div>
+        <div ref={gallery} className="gallery">
+          <Column images={[images[0], images[1], images[2], images[3], images[4]]} y={y} />
+          <Column images={[images[5], images[6], images[7], images[8], images[9]]} y={y2} />
+          <Column images={[images[10], images[11], images[12], images[13], images[14]]} y={y3} />
+          <Column images={[images[15], images[16], images[17], images[18], images[19]]} y={y4} />
         </div>
       </section>
 
@@ -147,7 +163,7 @@ function App() {
           </div>
           <div className="footer-links">
             <a href="#landing">Home</a>
-            <a href="#eulogy">Eulogy</a>
+            <a href="#eulogy">Obituary</a>
             <a href="#gallery">Gallery</a>
             <Link to="/gallery">All Photos</Link>
           </div>
@@ -171,7 +187,7 @@ const Column = ({ images, y }: { images: string[], y: any }) => {
         images.map((src, i) => {
           return <div key={i} className="imageContainer">
             <img
-              src={`/barry-memorial/barry/${src}`}
+              src={`/barry-memorial/media/${src}`}
               alt='memory'
               className="gallery-image"
             />

@@ -9,9 +9,9 @@ function Gallery() {
     const [isHeaderVisible, setIsHeaderVisible] = useState(true)
     const lastScrollY = useRef(0)
 
-    // Generate array of all 120 images
-    const images = Array.from({ length: 120 }, (_, i) =>
-        `/barry-memorial/barry/Document_20250911_${String(i + 1).padStart(4, '0')}.jpg`
+    // Generate array of all 174 images (all now have .jpg extension)
+    const images = Array.from({ length: 174 }, (_, i) =>
+        `/barry-memorial/media/image${String(i + 1)}.jpg`
     )
 
     useEffect(() => {

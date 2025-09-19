@@ -46,13 +46,15 @@ body {
       text-align: left;
 
       .memorial-title {
+        font-family: 'Crimson Text', cursive;
         font-size: 3.5rem;
-        font-weight: 300;
+        font-weight: 400;
         margin-bottom: 1rem;
         opacity: 0.9;
       }
 
       .name-title {
+        font-family: 'Dynalight', cursive;
         font-size: 5rem;
         font-weight: 400;
         margin-bottom: 2rem;
@@ -152,8 +154,10 @@ body {
     text-align: center;
 
     h3 {
-      font-size: 3rem;
-      margin-bottom: 3rem;
+      font-family: 'Dynalight', cursive;
+      font-size: 4rem;
+      margin-bottom: 1rem;
+      margin-top: 1rem;
       color: #2c2c2c;
       font-weight: 300;
     }
@@ -165,6 +169,7 @@ body {
 
       p {
         margin-bottom: 2rem;
+        padding: 0 1rem;
         text-align: left;
       }
     }
@@ -183,9 +188,11 @@ body {
     padding: 4rem 2rem 2rem;
 
     h3 {
-      font-size: 3rem;
+      font-family: 'Crimson Text', cursive;
+      font-size: 4rem;
       margin-bottom: 1rem;
-      font-weight: 300;
+      margin-top: 1rem;
+      font-weight: 400;
     }
 
     p {
@@ -249,7 +256,7 @@ body {
 
   .gallery-cta {
     text-align: center;
-    margin-top: 4rem;
+    margin-top: 1rem;
     margin-bottom: 2rem;
 
     .view-all-btn {
@@ -334,11 +341,23 @@ body {
 
       .hero-text {
         .memorial-title {
+          font-family: 'Crimson Text', cursive;
           font-size: 2.5rem;
         }
 
         .name-title {
+          font-family: 'Dynalight', cursive;
           font-size: 3.5rem;
+        }
+
+        .dates {
+          display: flex;
+          flex-direction: column;
+          gap: 0.5rem;
+
+          .separator {
+            display: none;
+          }
         }
       }
 
@@ -354,7 +373,8 @@ body {
   .eulogy-section {
     .eulogy-content {
       h3 {
-        font-size: 2.5rem;
+        font-family: 'Dynalight', cursive;
+        font-size: 3rem;
       }
     }
   }
@@ -364,19 +384,20 @@ body {
       padding: 2rem 0.5rem 1rem;
 
       h3 {
-        font-size: 2.5rem;
+        font-family: 'Crimson Text', cursive;
+        font-size: 4rem;
       }
     }
 
     .gallery {
-      gap: 0;
+      gap: 1vw;
       padding: 0;
-      height: 80vh;
+      height: 120vh; // Increased height for better parallax effect
       will-change: transform;
 
       .column {
         min-width: 180px;
-        gap: 0;
+        gap: 1vw;
         will-change: transform;
       }
     }
@@ -403,11 +424,13 @@ body {
 
       .hero-text {
         .memorial-title {
+          font-family: 'Crimson Text', cursive;
           font-size: 2rem;
         }
 
         .name-title {
-          font-size: 2.8rem;
+          font-family: 'Dynalight', cursive;
+          font-size: 4rem;
         }
       }
 
@@ -427,30 +450,30 @@ body {
 
   .parallax-gallery-section {
     .gallery {
-      gap: 0;
+      gap: 1vw;
       padding: 0;
-      height: 50vh;
+      height: 100vh; // Increased height for better parallax effect
       will-change: transform;
 
       .column {
-        min-width: 100px;
+        min-width: 90px;
         gap: 1vw;
         will-change: transform;
 
         &:nth-of-type(1) {
-          top: -53%;
+          top: -40%;
         }
 
         &:nth-of-type(2) {
-          top: -74%;
+          top: -65%;
         }
 
         &:nth-of-type(3) {
-          top: -31%;
+          top: -25%;
         }
 
         &:nth-of-type(4) {
-          top: -63%;
+          top: -60%;
         }
       }
     }
