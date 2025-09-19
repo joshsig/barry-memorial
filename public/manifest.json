@@ -8,7 +8,7 @@
     "theme_color": "#2c2c2c",
     "icons": [
         {
-            "src": "/barry-memorial/fish.svg",
+            "src": "fish.svg",
             "sizes": "any",
             "type": "image/svg+xml",
             "purpose": "any maskable"
